@@ -1,8 +1,7 @@
 ## Otee
-##### An open marketplace.
-======
-Welcome to Otee, an open marketplace where anyone can buy or sell goods anonymously.
+##### An open marketplace where anyone can buy or sell goods anonymously.
 Capstone project for the TTS 2016 part-time bootcamp.
+
 ------
 
 ### User stories (work in progress):
