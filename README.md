@@ -1,6 +1,9 @@
-## Otee
+# Project Shinobiri
 ##### An open marketplace where anyone can buy or sell goods anonymously.
 Capstone project for the TTS 2016 part-time bootcamp.
+
+##### Shinobi-iri:
+"Shinobi-iri", the art of stealth refers to the abilities of ninjas to remain unseen and undetected.
 
 ------
 
@@ -15,6 +18,8 @@ Capstone project for the TTS 2016 part-time bootcamp.
 * ...
 * ...
 * ...
+
+Working example - coming soon.
 
 Powered by [RoR](http://rubyonrails.org/)
 
