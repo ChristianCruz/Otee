@@ -1,5 +1,25 @@
+
 source 'https://rubygems.org'
 
+
+###############################################
+##
+## CUSTOM DEPENDENCIEs
+##
+###############################################
+
+# Materialize for front-end development and styles
+gem 'materialize-sass'
+
+# Devise for authentication
+gem 'devise'
+
+
+###############################################
+##
+## DEFAULT GEMS
+##
+###############################################
 
 gem 'rails', '4.2.5'
 

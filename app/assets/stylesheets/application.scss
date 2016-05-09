@@ -1,0 +1,144 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+@import "materialize/components/color";
+$dark-grey-01: color("grey", "darken-4") !default;
+$dark-grey-02: #181818;
+$green-01: color("light-green", "accent-3");
+$green-02: color("light-green", "accent-4");
+
+@import "materialize";
+
+
+//= = = = = = = = = = = = = = = = = = /
+// - GENERAL STYLES                  /
+//= = = = = = = = = = = = = = = = = /
+
+html {
+  background-color: $dark-grey-02;
+  color: $green-01;
+  font-family: 'Source Code Pro';
+}
+
+h1, h2 {
+  font-weight: 200;
+}
+
+h5 {
+  font-weight: 700;
+}
+
+
+//= = = = = = = = = = = = = = = = = = /
+// - NAVIGATION                      /
+//= = = = = = = = = = = = = = = = = /
+
+nav {
+  background-color: $dark-grey-02;
+    .brand-logo {
+      color: #fff !important;
+      font-weight: 200;
+      margin-left: 20px;
+      box-shadow: none !important;
+      border-bottom: 1px solid #fff;
+    }
+
+    a {
+      color: $green-01 !important;
+      font-weight: 200;
+      margin-right: 5px;
+      &:hover {
+        background-color: #000 !important;
+      }
+      i {
+        font-size: 25px !important;
+        color: #fff;
+        &:hover {
+          color: $green-01;
+          transition: all .25s linear 0s;
+        }
+      }
+    }
+}
+
+
+//= = = = = = = = = = = = = = = = = = /
+// - CUSTOM STYLES                   /
+//= = = = = = = = = = = = = = = = = /
+
+.main-content {
+  padding-left: 20px;
+  padding-bottom: 80px;
+}
+
+.z-depth-0 {
+  -webkit-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
+}
+
+form {
+  input {
+    border-bottom: 0 solid #000 !important;
+    color: $green-01 !important;
+    background-color: #000 !important;
+  }
+  input:focus {
+    border-bottom: 0 solid #000 !important;
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    color: $green-01 !important;
+    background-color: #000;
+  }
+}
+
+#search {
+  padding-left: 20px;
+  max-width: 600px;
+}
+
+// * - - BUTTONS - - * //
+//--------------------//
+
+.btn-search {
+  background-color: $green-01;
+  color: #000 !important;
+  // padding: 0px 20px 0px 20px;
+  i {
+    margin-right: 6px;
+  }
+  &:hover {
+    background-color: #000;
+    color: $green-01 !important;
+    border-radius: 0;
+  }
+}
+
+
+
+.footer {
+  background-color: rgba(0,0,0,0.88) !important;
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  position: fixed;
+  bottom: 0;
+  color: #444;
+}
+
+
+
+
+
