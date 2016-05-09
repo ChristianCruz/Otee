@@ -38,7 +38,13 @@ h1, h2 {
 }
 
 h5 {
-  font-weight: 700;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #fff;
+  i {
+    display: inline-flex;
+    vertical-align: middle;
+  }
 }
 
 
@@ -92,6 +98,7 @@ nav {
 
 form {
   input {
+    padding-left: 11px !important;
     border-bottom: 0 solid #000 !important;
     color: $green-01 !important;
     background-color: #000 !important;
@@ -105,27 +112,54 @@ form {
 }
 
 #search {
-  padding-left: 20px;
+  // padding-left: 20px;
   max-width: 600px;
 }
+
+.alert {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #000;
+  color: red;
+  .close {
+    border: none;
+    box-shadow: none;
+    font-size:30;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    background-color: red;
+    color: #000
+  }
+}
+
+// label.active {
+//   background-color: red;
+// }
+
+
 
 // * - - BUTTONS - - * //
 //--------------------//
 
-.btn-search {
-  background-color: $green-01;
+.btn {
+  background-color: $green-01 !important;
   color: #000 !important;
-  // padding: 0px 20px 0px 20px;
+  padding: 0px 20px 0px 20px !important;
+  text-align: center;
+
   i {
     margin-right: 6px;
   }
   &:hover {
-    background-color: #000;
+    background-color: #000 !important;
     color: $green-01 !important;
     border-radius: 0;
   }
+  &:active {
+    color: #000;
+  }
 }
-
 
 
 .footer {

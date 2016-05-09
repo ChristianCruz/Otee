@@ -18,6 +18,23 @@
   </nav>
 
   <div class="container left main-content">
+    <% if flash[:notice] %>
+       <div class="alert alert-success">
+         <button type="button" class="close right" data-dismiss="alert">&times;</button>
+         <%= flash[:notice] %>
+       </div>
+     <% elsif flash[:error] %>
+       <div class="alert alert-danger">
+         <button type="button" class="close right" data-dismiss="alert">&times;</button>
+         <%= flash[:error] %>
+       </div>
+     <% elsif flash[:alert] %>
+       <div class="alert alert-warning">
+         <button type="button" class="close right" data-dismiss="alert">&times;</button>
+         <%= flash[:alert] %>
+       </div>
+     <% end %>
+
     <%= yield %>
   </div>
 
@@ -27,7 +44,14 @@
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/"><i class="material-icons">home</i></a></li>
         <li><a href="/about"><i class="material-icons">info_outline</i></a></li>
-        <li><a href="#"><i class="material-icons">perm_identity</i></a></li>
+        <div class="user-info right">
+           <% if current_user %>
+             Hello, deshi. <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+           <% else %>
+             <%= link_to "Sign In", new_user_session_path %> |
+             <%= link_to "Sign Up", new_user_registration_path %>
+           <% end %>
+         </div>
       </ul>
   </nav>
 </body>
