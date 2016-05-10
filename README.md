@@ -1,5 +1,5 @@
 # Project Shinobiri
-##### An open marketplace where anyone can buy or sell goods anonymously.
+##### Subject closed for revision.
 Capstone project for the TTS 2016 part-time bootcamp.
 
 ##### Shinobi-iri:
