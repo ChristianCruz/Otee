@@ -17,6 +17,9 @@ gem 'devise'
 # Figaro, an elegant solution for handling sensitive data with environment variables.
 gem 'figaro', '1.0'
 
+# Create data with the following gem
+gem 'faker'
+
 
 ###############################################
 ##
