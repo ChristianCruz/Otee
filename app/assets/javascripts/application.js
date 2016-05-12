@@ -16,4 +16,8 @@
 //= require turbolinks
 //= require_tree .
 
-Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast
+// Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast
+
+$(document).click(function() {
+    $('.alert').click();
+  });

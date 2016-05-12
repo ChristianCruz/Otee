@@ -40,16 +40,23 @@
 
     
     <nav class="z-depth-0 footer">
-      <small><em>Per populum, pro populo.</em></small>
+      <% if current_user %>
+             Hello, deshi. 
+           <% else %>
+             <small><em>Per populum, pro populo.</em></small>
+           <% end %>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/"><i class="material-icons">home</i></a></li>
         <li><a href="/about"><i class="material-icons">info_outline</i></a></li>
+        <li><a href="/products"><i class="material-icons">explore</i></a></li>
         <div class="user-info right">
-           <% if current_user %>
-             Hello, deshi. <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+          <% if current_user %>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="material-icons exit_app">exit_to_app</i>
+            <% end %>
            <% else %>
-             <%= link_to "Sign In", new_user_session_path %> |
-             <%= link_to "Sign Up", new_user_registration_path %>
+             <li><a href="/users/sign_in"><i class="material-icons">account_circle</i></a></li>
+             <li><a href="/users/sign_up"><i class="material-icons">person_add</i></a></li>
            <% end %>
          </div>
       </ul>

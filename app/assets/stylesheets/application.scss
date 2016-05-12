@@ -161,6 +161,13 @@ form {
   }
 }
 
+.exit_app {
+  color: red;
+  &:hover {
+    color: #fff;
+  }
+}
+
 
 .footer {
   background-color: rgba(0,0,0,0.88) !important;

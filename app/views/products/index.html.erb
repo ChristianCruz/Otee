@@ -1,0 +1,4 @@
+<h2>Here's a listing of all the products for sale:</h2>
+<%= @posts.each do |post| %>
+  <p><%= link_to post.product, product_path(post.id) %></p>
+<% end %>
