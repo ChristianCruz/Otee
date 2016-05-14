@@ -13,6 +13,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(params.require(:post).permit(:product, :description))
+    @user = current_user
 
     #raise # This will short-circuit the method
 

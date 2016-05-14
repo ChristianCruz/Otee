@@ -1,4 +1,8 @@
 <h1>All Posts</h1>
 <% @posts.each do |post| %>
   <p><%= link_to post.product, post %></p>
+  <small>
+    submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.username %><br>
+    <%= post.comments.count %> Comments
+  </small>
 <% end %>
