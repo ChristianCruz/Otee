@@ -1,21 +1,29 @@
- <h1>New Post</h1>
- 
- <div class="row">
-  <div class="col m4">
-    <p>Guidelines for posts</p>
-    <ul>
-      <li>Make sure it rhymes.</li>
-      <li>Don't use the letter "A".</li>
-      <li>The incessant use of hashtags will get you banned.</li>
-    </ul>
-  </div>
+<div class="row">
+  <div class="col l8">
+    <h2>Add a product for sale</h2>
+    <p><i class="material-icons">warning</i> Any good, service, or content that violates the law is prohibited. <small>These include: Weapons, firearms, guns, explosives, drugs, alcohol, tobacco, pornography, illegal prostitution, personal information, endangered and/or protected protected species.</p>
 
-<%= form_for @post do |f| %>
-  <%= f.label :product %>
-  <%= f.text_field :product %>
- 
-  <%= f.label :description %>
-  <%= f.text_area :description %>
- 
-  <%= f.submit "Save" %>
-<% end %>
+    <i>I understand these terms</i>
+
+    <br><br>
+
+    <%= form_for @post do |f| %>
+
+      <div class="field">
+        <%= f.label :product %>
+        <%= f.text_field :product %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :description %>
+        <%= f.text_area :description %>
+      </div>
+
+      <br>
+
+      <div class="actions">
+        <%= f.submit "Save", class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>

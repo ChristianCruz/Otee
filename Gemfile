@@ -20,6 +20,11 @@ gem 'figaro', '1.0'
 # Create data with the following gem
 gem 'faker'
 
+# nav_links gem adds a 'selected' class to your link 
+gem 'nav_links'
+
+# Pundit makes it easier to authorize different user for different tasks.
+gem 'pundit'
 
 ###############################################
 ##

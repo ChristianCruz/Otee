@@ -11,13 +11,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav class="z-depth-0">
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo">Shinobiri</a>
-    </div>
-  </nav>
-
-  <div class="container left main-content">
+  <div class="container main-content">
+    <nav class="z-depth-0">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Shinobiri</a>
+      </div>
+    </nav>
+  <!-- FLASH ERRORS -->
     <% if flash[:notice] %>
        <div class="alert alert-success">
          <button type="button" class="close right" data-dismiss="alert">&times;</button>
@@ -39,27 +39,56 @@
   </div>
 
     
-    <nav class="z-depth-0 footer">
-      <% if current_user %>
-             Hello, deshi. 
-           <% else %>
-             <small><em>Per populum, pro populo.</em></small>
-           <% end %>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/"><i class="material-icons">home</i></a></li>
-        <li><a href="/about"><i class="material-icons">info_outline</i></a></li>
-        <li><a href="/posts"><i class="material-icons">explore</i></a></li>
-        <div class="user-info right">
-          <% if current_user %>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="material-icons exit_app">exit_to_app</i>
-            <% end %>
-           <% else %>
-             <li><a href="/users/sign_in"><i class="material-icons">account_circle</i></a></li>
-             <li><a href="/users/sign_up"><i class="material-icons">person_add</i></a></li>
-           <% end %>
-         </div>
-      </ul>
+  <nav class="z-depth-0 footer">
+    <% if current_user %>
+      Hello, deshi. 
+    <% else %>
+      <small><em>Per populum, pro populo.</em></small>
+    <% end %>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+
+    
+
+
+      <!-- <li><a href="/"></a></li> -->
+      <li>
+        <%= nav_link_to(root_path, {}, { :selected_class => 'active' }) do %>
+          <i class="material-icons">home</i>
+        <%end%>
+      </li>
+
+      <li>
+        <%= nav_link_to(about_path, {}, { :selected_class => 'active' }) do %>
+          <i class="material-icons">info_outline</i>
+        <% end %>
+      </li>
+
+      <li>
+        <%= nav_link_to(posts_path, {}, { :selected_class => 'active' }) do %>
+          <i class="material-icons">explore</i>
+        <% end %>
+      </li>
+
+      <div class="user-info right">
+        <% if current_user %>
+          <%= nav_link_to destroy_user_session_path, method: :delete do %>
+            <i class="material-icons exit_app">exit_to_app</i>
+          <% end %>
+         <% else %>
+           <li>
+        <%= nav_link_to(new_user_session_path, {}, { :selected_class => 'active' }) do %>
+          <i class="material-icons">account_circle</i>
+        <% end %>
+      </li>
+
+      <li>
+        <%= nav_link_to(new_user_registration_path, {}, { :selected_class => 'active' }) do %>
+          <i class="material-icons">person_add</i>
+        <% end %>
+      </li>
+         <% end %>
+       </div>
+    </ul>
   </nav>
 </body>
 
