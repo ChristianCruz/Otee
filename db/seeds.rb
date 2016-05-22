@@ -12,7 +12,7 @@ require 'faker'
 # Create Users
  5.times do
    user = User.new(
-     username:     Faker::Name.name,
+     username:     Faker::Internet.user_name,
      email:    Faker::Internet.email,
      password: Faker::Lorem.characters(10)
    )
@@ -31,7 +31,7 @@ require 'faker'
     name: Faker::Lorem.sentence
   )
 end
-Categories = Category.all
+categories = Category.all
  
  
  # The `skip_confirmation!` method sets the `confirmed_at` attribute
@@ -42,9 +42,8 @@ Categories = Category.all
  # Create Posts
  50.times do
    Post.create!(
-      username: usernames.sample,
      user: users.sample,
-     category: category.sample,
+     category: categories.sample,
      product:  Faker::Lorem.sentence,
      description:   Faker::Lorem.paragraph
    )
@@ -62,7 +61,7 @@ Categories = Category.all
 
  # Create an admin user
  admin = User.new(
-   username:     'Admin User',
+   username:     'administrator',
    email:    'admin@example.com',
    password: 'helloworld',
    role:     'admin'
@@ -72,7 +71,7 @@ Categories = Category.all
  
  # Create a moderator
  moderator = User.new(
-   username:     'Moderator User',
+   username:     'Moderator',
    email:    'moderator@example.com',
    password: 'helloworld',
    role:     'moderator'
@@ -82,7 +81,7 @@ Categories = Category.all
  
  # Create a member
  member = User.new(
-   username:     'Member User',
+   username:     'Member',
    email:    'member@example.com',
    password: 'helloworld'
  )

@@ -40,7 +40,7 @@
 
     
   <nav class="z-depth-0 footer">
-    <% if current_user && current_user = 'admin' %>
+    <% if current_user && current_user.role == 'admin' %>
       Hello, Master.
       <% elsif current_user %> 
       Hello, deshi.
