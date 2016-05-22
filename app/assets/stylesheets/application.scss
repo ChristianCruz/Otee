@@ -70,7 +70,7 @@ h5 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
-.alert > .alert-success {
+.alert-success {
   margin-top: 20px;
   padding: 10px;
   background-color: #fff !important;
@@ -82,8 +82,8 @@ h5 {
     padding-top: 0;
     padding-bottom: 0;
     margin-top: 0;
-    background-color: red;
-    color: #000;
+    background-color: #000000 !important;
+    color: #ffffff !important;
   }
 }
 
