@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @categories =  []
 
     authorize @post
   end
@@ -47,4 +48,8 @@ class PostsController < ApplicationController
       render :edit
     end
   end
+
+  # def post_params
+  #   params.require(:post).permit(:product, :description, :user_id)
+  # end
 end

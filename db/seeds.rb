@@ -23,6 +23,16 @@ require 'faker'
  
  # Note: by calling `User.new` instead of `create`,
  # we create an instance of User which isn't immediately saved to the database.
+
+ # Create Categories
+
+15.times do 
+  Category.create!(
+    name: Faker::Lorem.sentence
+  )
+end
+Categories = Category.all
+ 
  
  # The `skip_confirmation!` method sets the `confirmed_at` attribute
  # to avoid triggering an confirmation email when the User is saved.
@@ -32,7 +42,9 @@ require 'faker'
  # Create Posts
  50.times do
    Post.create!(
+      username: usernames.sample,
      user: users.sample,
+     category: category.sample,
      product:  Faker::Lorem.sentence,
      description:   Faker::Lorem.paragraph
    )

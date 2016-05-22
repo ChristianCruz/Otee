@@ -1,29 +1,51 @@
 <div class="row">
-  <div class="col l8">
-    <h2>Add a product for sale</h2>
-    <p><i class="material-icons">warning</i> Any good, service, or content that violates the law is prohibited. <small>These include: Weapons, firearms, guns, explosives, drugs, alcohol, tobacco, pornography, illegal prostitution, personal information, endangered and/or protected protected species.</p>
+  <div class="col l6">
+    <h2>Add a product for sale</h2> 
+    <p><strong>Here's how you do it:</strong></p>
+    <ol>
+      <li>Type in your product's name.</li>
+      <li>Then, in a simple and brief description, tell us what the product is about.</li>
+      <li>Type in your asking price.</li>
+      <li>Upload 4 pictures <small>(this is a must!)</small>.</li>
+      <li>Hit the SAVE button.</li>
+    </ol>
 
-    <i>I understand these terms</i>
-
+  </div>
+  <div class="col l5 offset-l1">
     <br><br>
 
-    <%= form_for @post do |f| %>
+        <%= form_for @post do |f| %>
 
-      <div class="field">
-        <%= f.label :product %>
-        <%= f.text_field :product %>
-      </div>
-      
-      <div class="field">
-        <%= f.label :description %>
-        <%= f.text_area :description %>
-      </div>
+          <div class="field">
+            <%= f.label :product %>
+            <%= f.text_field :product %>
+          </div>
 
-      <br>
+          <div class="field">
+            <%= f.label :category %>
+            <%= f.select :category, [ 'Cell', 'Work', 'Office', 'Home', 'Other' ], :prompt => 'Select One' %>
+          </div>
+          
+          <div class="field">
+            <%= f.label :description %>
+            <%= f.text_area :description %>
+          </div>
 
-      <div class="actions">
-        <%= f.submit "Save", class: 'btn' %>
-      </div>
-    <% end %>
+
+          <div class="field">
+            <%= f.label :price %>
+            <%= f.text_field :price %>
+          </div>
+
+          <p><i class="material-icons">warning</i> Any good, service, or content that violates the law is prohibited.<br><small>Users that do not follow this simple rule will see their posts flagged and/or removed. </p>
+
+          <i>I have read &amp; understand the <%= link_to "Terms of Use", about_path%>.</i>
+
+          <br><br>
+
+          <div class="actions">
+            <%= f.submit "Save", class: 'btn' %>
+          </div>
+        <% end %>
   </div>
 </div>

@@ -40,8 +40,10 @@
 
     
   <nav class="z-depth-0 footer">
-    <% if current_user %>
-      Hello, deshi. 
+    <% if current_user && current_user = 'admin' %>
+      Hello, Master.
+      <% elsif current_user %> 
+      Hello, deshi.
     <% else %>
       <small><em>Per populum, pro populo.</em></small>
     <% end %>
@@ -53,37 +55,37 @@
       <!-- <li><a href="/"></a></li> -->
       <li>
         <%= nav_link_to(root_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons">home</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Home">home</i>
         <%end%>
       </li>
 
       <li>
         <%= nav_link_to(about_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons">info_outline</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="About Shinobiri">info_outline</i>
         <% end %>
       </li>
 
       <li>
         <%= nav_link_to(posts_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons">explore</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Marketplace">explore</i>
         <% end %>
       </li>
 
       <div class="user-info right">
         <% if current_user %>
-          <%= nav_link_to destroy_user_session_path, method: :delete do %>
-            <i class="material-icons exit_app">exit_to_app</i>
+          <%= link_to destroy_user_session_path, method: :delete do %>
+            <i class="material-icons exit_app tooltipped" data-position="top" data-delay="50" data-tooltip="Exit">exit_to_app</i>
           <% end %>
          <% else %>
            <li>
         <%= nav_link_to(new_user_session_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons">account_circle</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Log in">account_circle</i>
         <% end %>
       </li>
 
       <li>
         <%= nav_link_to(new_user_registration_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons">person_add</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Sign up">person_add</i>
         <% end %>
       </li>
          <% end %>

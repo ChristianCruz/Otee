@@ -70,6 +70,40 @@ h5 {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0), 0 0 0 0 rgba(0, 0, 0, 0);
 }
 
+.alert > .alert-success {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #fff !important;
+  color: #000 !important;
+  .close {
+    border: none;
+    box-shadow: none;
+    font-size:30;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    background-color: red;
+    color: #000;
+  }
+}
+
+
+.alert, .alert-danger, .alert-warning {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #000;
+  color: red;
+  .close {
+    border: none;
+    box-shadow: none;
+    font-size:30;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    background-color: red;
+    color: #000
+  }
+}
 //= = = = = = = = = = = = = = = = = = /
 // - NAVIGATION                      /
 //= = = = = = = = = = = = = = = = = /
@@ -110,6 +144,25 @@ nav
   border-bottom: 1px solid $green-01;
 }
 
+.backdrop{
+       background-color: rgba(0, 0, 0, 0);
+     }
+
+//= = = = = = = = = = = = = = = = = = /
+// - FOOTER STYLES                   /
+//= = = = = = = = = = = = = = = = = /
+
+.footer {
+  background-color: rgba(0,0,0,0.88) !important;
+  width: 100%;
+  padding-left: 20px;
+  margin-bottom: 0px;
+  position: fixed;
+  bottom: 0;
+  color: #444;
+}
+
+
 
 //= = = = = = = = = = = = = = = = = = /
 // - CUSTOM STYLES                   /
@@ -147,28 +200,10 @@ form {
   max-width: 600px;
 }
 
-.alert {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #000;
-  color: red;
-  .close {
-    border: none;
-    box-shadow: none;
-    font-size:30;
-    padding-top: 0;
-    padding-bottom: 0;
-    margin-top: 0;
-    background-color: red;
-    color: #000
-  }
-}
-
 
 // label.active {
 //   background-color: red;
 // }
-
 
 
 // * - - BUTTONS - - * //
@@ -196,15 +231,10 @@ form {
 }
 
 
-.footer {
-  background-color: rgba(0,0,0,0.88) !important;
-  width: 100%;
-  padding-left: 20px;
-  margin-bottom: 0px;
-  position: fixed;
-  bottom: 0;
-  color: #444;
-}
+// * - -  FORMS  - - * //
+//--------------------//
+
+
 
 
 
