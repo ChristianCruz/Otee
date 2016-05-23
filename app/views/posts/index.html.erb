@@ -13,11 +13,15 @@
         <li class="collection-item">
           <p><strong><%= link_to post.product, post %></strong></p>
           <small>
-         submitted <%= time_ago_in_words(post.created_at) %> <br>
-         <%= post.comments.count %> <% if post.comments.count < 2 %>Comment <% else %>Comments<% end %>
-       </small>
+            submitted <%= time_ago_in_words(post.created_at) %> <br>
+            <%= post.comments.count %> <% if post.comments.count < 2 %>Comment <% else %>Comments<% end %>
+          </small>
+          <div class="right">
+            <%= image_tag(@post.image.thumb.url) if post.image? %>
+          </div>
         </li>
         </ul>
     <% end %>
+    <%= will_paginate @posts %>
   </div>
 </div>

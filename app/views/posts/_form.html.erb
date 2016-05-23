@@ -1,0 +1,56 @@
+<%= form_for @post do |f| %>
+  
+  <% if post.errors.any? %>
+     <div class="alert alert-danger">
+       <h5>There are <%= pluralize(post.errors.count, "error") %>.</h5>
+       <ol>
+         <% post.errors.full_messages.each do |msg| %>
+           <li><small><%= msg %></small></li>
+         <% end %>
+       </ol>
+     </div>
+   <% end %>
+
+  <div class="field">
+    <%= f.label :product %>
+    <%= f.text_field :product %>
+  </div>
+
+  <div class="field">
+    <%= f.label :category %>
+    <%= f.select :category, [ 'Cell', 'Work', 'Office', 'Home', 'Other' ], :prompt => 'Select One' %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  <% if @post.image? %>
+    <div class="field">
+      <p>Current image:</p>
+      <%= image_tag( @post.image.thumb.url ) %>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :price %>
+    <%= f.text_field :price %>
+  </div>
+
+  <p><i class="material-icons">warning</i> Any good, service, or content that violates the law is prohibited.<br><small>Users that do not follow this simple rule will see their posts flagged and/or removed. </p>
+
+  <i>I have read &amp; understand the <%= link_to "Terms of Use", about_path%>.</i>
+
+  <br><br>
+
+  <div class="actions">
+    <%= f.submit "Save", class: 'btn' %>
+  </div>
+<% end %>

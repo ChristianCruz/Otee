@@ -1,5 +1,9 @@
 <h1><%= @post.product %></h1>
+<p><%= @post.description %></p>
+<p>US&amp;<%= @post.price %></p>
+
+<%= image_tag(@post.image.thumb.url) if @post.image? %>
+
 <% if policy(@post).edit? %>
   <%= link_to "Edit", edit_post_path(@post), class: 'btn' %>
 <% end %>
-<p><%= @post.description %></p>

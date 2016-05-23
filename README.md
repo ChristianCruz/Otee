@@ -1,5 +1,5 @@
 # Project Shinobiri
-##### Subject closed for revision.
+##### Shinobiri is a tool for discreet commerce..
 Capstone project for the TTS 2016 part-time bootcamp.
 
 ##### Shinobi-iri:
@@ -10,16 +10,22 @@ Capstone project for the TTS 2016 part-time bootcamp.
 ### User stories (work in progress):
 * ~~As a user, I want to sign up for an account by providing a user name, password and email. Should be by invitation only.~~
 * ~~As a user, I want to sign in and out of Shinobiri~~  
-* As a user, I want to see my profile page
-* As a user, I want to create and post items for sale.
-* As a user...
+* ~~As a user, I want to create and post items for sale.~~
+* As a user 
 
 ### Dependencies (work in progress):
-* ...
-* ...
-* ...
+* materialize-sass
+* devise
+* figaro
+* faker
+* nav_links
+* pundit
+* carrierwave
+* mini_magick
+* fog
+* will_paginate
 
-Working example - coming soon.
+Working example - [click here](shinobiri.herokuapp.com).
 
 Powered by [RoR](http://rubyonrails.org/)
 

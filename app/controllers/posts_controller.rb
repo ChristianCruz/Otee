@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.paginate(page: params[:page], per_page: 10)
 
     authorize @posts
   end
@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:product, :description))
+    @post = Post.new(post_params)
     @user = current_user
     authorize @post
 
@@ -25,7 +25,7 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = "Post saved successfully!"
-      redirect_to @post
+      redirect_to posts_path
     else
       flash[:error] = " There was an error saving the post. Please try again!"
       render :new
@@ -49,7 +49,9 @@ class PostsController < ApplicationController
     end
   end
 
-  # def post_params
-  #   params.require(:post).permit(:product, :description, :user_id)
-  # end
+  private
+
+  def post_params
+    params.require(:post).permit(:product, :description, :image)
+  end
 end

@@ -13,39 +13,6 @@
   </div>
   <div class="col l5 offset-l1">
     <br><br>
-
-        <%= form_for @post do |f| %>
-
-          <div class="field">
-            <%= f.label :product %>
-            <%= f.text_field :product %>
-          </div>
-
-          <div class="field">
-            <%= f.label :category %>
-            <%= f.select :category, [ 'Cell', 'Work', 'Office', 'Home', 'Other' ], :prompt => 'Select One' %>
-          </div>
-          
-          <div class="field">
-            <%= f.label :description %>
-            <%= f.text_area :description %>
-          </div>
-
-
-          <div class="field">
-            <%= f.label :price %>
-            <%= f.text_field :price %>
-          </div>
-
-          <p><i class="material-icons">warning</i> Any good, service, or content that violates the law is prohibited.<br><small>Users that do not follow this simple rule will see their posts flagged and/or removed. </p>
-
-          <i>I have read &amp; understand the <%= link_to "Terms of Use", about_path%>.</i>
-
-          <br><br>
-
-          <div class="actions">
-            <%= f.submit "Save", class: 'btn' %>
-          </div>
-        <% end %>
+    <%= render partial: 'form', locals: { post: @post } %>
   </div>
 </div>

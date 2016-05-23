@@ -1,27 +1,18 @@
-<h1>Edit Post</h1>
- 
- <div class="row">
-   <div class="col-md-4">
-     <p>Guidelines for posts</p>
-     <ul>
-       <li>Make sure it rhymes.</li>
-       <li>Don't use the letter "A".</li>
-       <li>The incessant use of hashtags will get you banned.</li>
-     </ul>
-   </div>
-   <div class="col-md-8">
-     <%= form_for @post do |f| %>
-       <div class="form-group">
-         <%= f.label :product %>
-         <%= f.text_field :product, class: 'form-control', placeholder: "Enter post title" %>
-       </div>
-       <div class="form-group">
-         <%= f.label :description %>
-         <%= f.text_area :description, rows: 8, class: 'form-control', placeholder: "Enter post body" %>
-       </div>
-       <div class="form-group">
-         <%= f.submit "Save", class: 'btn btn-success' %>
-       </div>
-     <% end %>
-   </div>
+<div class="row">
+  <div class="col l6">
+    <h2>Edit Post</h2> 
+    <p><strong>Here's how you do it:</strong></p>
+    <ol>
+      <li>Type in your product's name.</li>
+      <li>Then, in a simple and brief description, tell us what the product is about.</li>
+      <li>Type in your asking price.</li>
+      <li>Upload 4 pictures <small>(this is a must!)</small>.</li>
+      <li>Hit the SAVE button.</li>
+    </ol>
+
+  </div>
+   <div class="col l5 offset-l1">
+    <br><br>
+    <%= render partial: 'form', locals: { post: @post } %>
+  </div>
  </div>

@@ -26,6 +26,18 @@ gem 'nav_links'
 # Pundit makes it easier to authorize different user for different tasks.
 gem 'pundit'
 
+# this gem provides a simple way to upload files
+gem 'carrierwave'
+
+# a ruby wrapper for Imagemagic
+gem 'mini_magick'
+
+# fog is a ruby cloud service gem that supports Amazon S3
+gem 'fog'
+
+# paginate content
+ gem 'will_paginate', '~> 3.0.5'
+
 ###############################################
 ##
 ## DEFAULT GEMS
