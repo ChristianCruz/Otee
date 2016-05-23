@@ -38,6 +38,10 @@ gem 'fog'
 # paginate content
  gem 'will_paginate', '~> 3.0.5'
 
+ # grab bindings from higher up the call stack and evaluate code in that context
+ gem 'binding_of_caller'
+
+
 ###############################################
 ##
 ## DEFAULT GEMS
@@ -50,10 +54,6 @@ gem 'rails', '4.2.5'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
-end
-
-group :development do
-  gem 'sqlite3'
 end
 
 # Use SCSS for stylesheets
@@ -81,7 +81,8 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
-
+  gem 'sqlite3'
+  gem "better_errors"
   gem 'spring'
 end
 
