@@ -6,6 +6,8 @@ class Post < ActiveRecord::Base
   
   default_scope { order('created_at DESC') }
 
+  scope :searched, -> (keyword) { where('product LIKE ?', "%#{keyword}%")}
+
   validates :product, length: { minimum: 5 }, presence: true
   validates :description, length: { minimum: 20 }, presence: true
   # validates :category, presence: true

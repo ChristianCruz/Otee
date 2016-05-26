@@ -1,10 +1,9 @@
-
 <div class="col l8 intro">
   <h2>Welcome to the Shinobiri market.</h2>
   <p>What are we looking for today?</p>
   <div class="input-field">
-    <%= form_tag do %>
-      <%= text_field_tag :search, '', autofocus: true%>
+    <%= form_tag(posts_path, method: "get") do %>
+      <%= text_field_tag :keyword, '', autofocus: true%>
       <br>
       <button type="submit" name="commit" value="Search" class="btn btn-default">search</button> 
     <% end %>
