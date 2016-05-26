@@ -57,6 +57,14 @@ h5 {
 
 .collection-item {
   background-color: #000 !important;
+  margin-bottom: 20px !important;
+  border-bottom: none !important;
+  .row {
+    margin-bottom: 0;
+  }
+  &:hover {
+    border: 1px dotted #999 !important;
+  }
 }
 
 
@@ -112,9 +120,11 @@ nav {
   background-color: $dark-grey-01;
     .brand-logo {
       color: #fff !important;
+      margin-left: 15px;
       font-weight: 200;
       box-shadow: none !important;
       border-bottom: 1px solid #fff;
+       background-color: $dark-grey-01;
     }
 
     a {
@@ -200,11 +210,55 @@ form {
   max-width: 600px;
 }
 
+.welcome-signup {
+  // border-top: 4px solid #000;
+  margin-top: 90px;
+}
 
-// label.active {
-//   background-color: red;
-// }
+.card-action {
+  padding-top: 0;
+}
 
+.card-title {
+  line-height: 30px !important;
+}
+
+.intro {
+  margin-top: 90px;
+  h2 {
+    margin-top: 0;
+  }
+}
+
+// * - - POSTS - - * //
+//------------------//
+
+.post {
+  margin-top: 45px;
+  .post_small {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    color: #888;
+  }
+  h3, h4, p {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .btn-back {
+    display: block;
+    clear: both;
+    i {
+      color: #000;
+      &:hover {
+        color: $green-01;
+      }
+    }
+  }
+}
+
+.images-column {
+  // background-color: red;
+}
 
 // * - - BUTTONS - - * //
 //--------------------//
@@ -212,7 +266,7 @@ form {
 .btn {
   background-color: $green-01 !important;
   color: #000 !important;
-  text-align: center;
+  text-align: center !important;
   &:hover {
     background-color: #000 !important;
     color: $green-01 !important;
@@ -231,12 +285,38 @@ form {
 }
 
 
-// * - -  FORMS  - - * //
-//--------------------//
+// * - -  images  - - * //
+//---------------------//
+
+.post-image {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 0;
+  img {
+    border-radius: 4px;    
+  }
+}
+
+.product-title {
+  display: inline;
+}
 
 
+.about {
+     width: 100%;
+     background: image-url('bg.jpg') no-repeat center center fixed !important;
+    -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+     min-height: 100%;
+         border-width: 20px;
+    border-color:black;
 
+   }
 
-
+   .container-about {
+    background-color: rgba(0,0,0,0.5);
+   }
 
 

@@ -1,15 +1,28 @@
 
-  <div class="col s12">
-    <h2>Project Shinobiri.</h2>
-    <p>What are we looking for today?</p>
+<div class="col l8 intro">
+  <h2>Welcome to the Shinobiri market.</h2>
+  <p>What are we looking for today?</p>
+  <div class="input-field">
+    <%= form_tag do %>
+      <%= text_field_tag :search, '', autofocus: true%>
+      <br>
+      <button type="submit" name="commit" value="Search" class="btn btn-default">search</button> 
+    <% end %>
   </div>
+</div>
 
-  <div class="">
-    <div class="input-field">
-      <%= form_tag do %>
-        <%= text_field_tag :search, '', autofocus: true%>
-        <br>
-        <button type="submit" name="commit" value="Search" class="btn btn-default">search</button> 
-      <% end %>
+<div class="row">
+  <div class="col l4 welcome-signup">
+    <div class="card white darken-1">
+      <div class="card-content black-text">
+        <span class="card-title">Don't forget to sign up!</span><br><br>
+        <p>Before you can post a product for sale, ask questions or buy something, you need to register an account!</p>
+      </div>
+      <div class="card-action">
+        <div class="row">
+          <%= link_to "Register now", new_user_registration_path, class: "btn btn-flat col s12" %>
+        </div>
+      </div>
     </div>
   </div>
+</div>

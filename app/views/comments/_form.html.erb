@@ -1,8 +1,14 @@
 <% if current_user %>
- <h4>Add a comment:</h4>
- <%= form_for [post, comment] do |f| %>
-   <%= f.label :body %>
-   <%= f.text_field :body %>
-   <%= f.submit %>
- <% end %>
+  <h5><small>Use the form below to ask questions about this product:</small></h5>
+
+  <%= form_for [@post, @post.comments.build] do |f| %>
+    <div class="field">
+      <%= f.label :body %>
+    </div>
+    
+    <div class="field">
+      <%= f.text_field :body %>
+    </div>
+    <%= f.submit "Post question", class:'btn' %>
+  <% end %>
 <% end %> 

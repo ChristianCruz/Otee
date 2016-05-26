@@ -2,40 +2,51 @@
 <html>
 <head>
   <title>The Shinobiri Market.</title>
+
   <!-- CUSTOM FONTS -->
   <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,200,300,500,600,900,700' rel='stylesheet' type='text/css'>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+
+  <div class="<%=params[:action]%>" style=": 20px;">
+
 </head>
 <body>
-  <div class="container main-content">
-    <nav class="z-depth-0">
-      <div class="nav-wrapper">
-        <a href="/" class="brand-logo">Shinobiri</a>
+<div class="navbar-fixed">
+        <nav class="z-depth-0 transparent">
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo">Shinobiri</a>
+          </div>
+        </nav>
       </div>
-    </nav>
-  <!-- FLASH ERRORS -->
-    <% if flash[:notice] %>
-       <div class="alert alert-success">
-         <button type="button" class="close right" data-dismiss="alert">&times;</button>
-         <%= flash[:notice] %>
-       </div>
-     <% elsif flash[:error] %>
-       <div class="alert alert-danger">
-         <button type="button" class="close right" data-dismiss="alert">&times;</button>
-         <%= flash[:error] %>
-       </div>
-     <% elsif flash[:alert] %>
-       <div class="alert alert-warning">
-         <button type="button" class="close right" data-dismiss="alert">&times;</button>
-         <%= flash[:alert] %>
-       </div>
-     <% end %>
+  <div class="container main-content">
+    <div class="row">
+      
+      <!-- FLASH ERRORS -->
+      <% if flash[:notice] %>
+         <div class="alert alert-success">
+           <button type="button" class="close right" data-dismiss="alert">&times;</button>
+           <%= flash[:notice] %>
+         </div>
+       <% elsif flash[:error] %>
+         <div class="alert alert-danger">
+           <button type="button" class="close right" data-dismiss="alert">&times;</button>
+           <%= flash[:error] %>
+         </div>
+       <% elsif flash[:alert] %>
+         <div class="alert alert-warning">
+           <button type="button" class="close right" data-dismiss="alert">&times;</button>
+           <%= flash[:alert] %>
+         </div>
+       <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
   </div>
 
     
@@ -48,11 +59,6 @@
       <small><em>Per populum, pro populo.</em></small>
     <% end %>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
-
-    
-
-
-      <!-- <li><a href="/"></a></li> -->
       <li>
         <%= nav_link_to(root_path, {}, { :selected_class => 'active' }) do %>
           <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Home">home</i>
@@ -61,13 +67,13 @@
 
       <li>
         <%= nav_link_to(about_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="About Shinobiri">info_outline</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="About Shinobiri">help</i>
         <% end %>
       </li>
 
       <li>
         <%= nav_link_to(posts_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Marketplace">explore</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Marketplace">local_offer</i>
         <% end %>
       </li>
 
@@ -79,7 +85,7 @@
          <% else %>
            <li>
         <%= nav_link_to(new_user_session_path, {}, { :selected_class => 'active' }) do %>
-          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Log in">account_circle</i>
+          <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="Log in">vpn_key</i>
         <% end %>
       </li>
 
@@ -92,6 +98,7 @@
        </div>
     </ul>
   </nav>
+  </div>
 </body>
 
 </html>

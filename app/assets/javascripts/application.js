@@ -19,6 +19,12 @@
 
 // Materialize.toast('I am a toast!', 4000) // 4000 is the duration of the toast
 
+$(function() {
+   $('.alert').delay(500).fadeIn('normal', function() {
+      $(this).delay(2500).fadeOut();
+   });
+});
+
 $(document).click(function() {
     $(".close").click(function(){
         $(".alert").hide();

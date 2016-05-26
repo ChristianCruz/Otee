@@ -1,27 +1,40 @@
-<div class="row">
-  <div class="col l12">
+
+<div class="col l12">
   <h2>Products for sale</h2>
   <%= link_to new_post_path, class: 'btn-floating btn-large waves-effect waves-light right add-post' do %>
-     <i class="material-icons">add</i>
+  <i class="material-icons tooltipped" data-position="left" data-delay="50" data-tooltip="Add a product">add</i>
   <% end %>
+</div>
+<div class="col l12">
+  <% @category.each do |c| %>
+    <div class="chip">
+      <%= c %>
+    <i class="material-icons">close</i>
   </div>
+  <% end %>
+</div>
 </div>
 <div class="row">
-  <div class="col s12">
+<div class="col s12">
+  <ul class="collection">
     <% @posts.each do |post| %>
-      <ul class="collection">
         <li class="collection-item">
-          <p><strong><%= link_to post.product, post %></strong></p>
-          <small>
-            submitted <%= time_ago_in_words(post.created_at) %> <br>
-            <%= post.comments.count %> <% if post.comments.count < 2 %>Comment <% else %>Comments<% end %>
-          </small>
-          <div class="right">
-            <%= image_tag(@post.image.thumb.url) if post.image? %>
-          </div>
+          <div class="row">
+            <div class="col s9">
+              <p class="product-title"><strong><%= link_to post.product, post %></strong></p>
+              <p>$<%= post.price %></p>
+              <small>
+                submitted <%= time_ago_in_words(post.created_at) %> | 
+                <%= post.comments.count %> <% if post.comments.count < 2 %>Comment <% else %>Comments<% end %>
+              </small>
+            </div>
+            <div class="col s3">
+              <div class="right post-image">
+                <%= image_tag(post.image.thumb, class: '') if post.image? %>
+              </div>
+            </div>
         </li>
-        </ul>
     <% end %>
-    <%= will_paginate @posts %>
-  </div>
+  </ul>
+  <%= will_paginate @posts %>
 </div>

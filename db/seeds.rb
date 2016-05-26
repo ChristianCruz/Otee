@@ -45,7 +45,8 @@ categories = Category.all
      user: users.sample,
      category: categories.sample,
      product:  Faker::Lorem.sentence,
-     description:   Faker::Lorem.paragraph
+     description:   Faker::Lorem.paragraph,
+     price: Faker::Commerce.price,
    )
  end
  posts = Post.all

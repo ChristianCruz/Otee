@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   def index
     @posts = Post.paginate(page: params[:page], per_page: 10)
 
+    @category =  ["Prueba", "test", "Epreuve"]
+
     authorize @posts
   end
 
@@ -48,6 +50,20 @@ class PostsController < ApplicationController
     else
       flash[:error] = "There was an error updating your post! Please try again!"
       render :edit
+    end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    product = @post.product
+
+    authorize @post
+    if @post.destroy
+      flash[:notice] = "\"#{@post.product}\" was deleted successfully."
+      redirect_to posts_path
+    else
+      flash[:error] = "There was an error deleting the topic."
+      render :show
     end
   end
 

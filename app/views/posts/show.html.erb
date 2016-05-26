@@ -1,21 +1,49 @@
-<h1><%= @post.product %></h1>
-<p><%= @post.description %></p>
-<p>US&amp;<%= @post.price %></p>
+<div class="col s5 post">
+  <%= link_to posts_path, class: 'btn-back btn btn-floating' do %>
+     <i class="material-icons tooltipped" data-position="right" data-delay="50" data-tooltip="Back to list">arrow_back</i>
+  <% end %>
+  <a class=""><i class="material-icons"></i></a><br><br>
+  <small class="post_small">Product:</small>
+  <h4><%= @post.product %></h4>
+  <br>
+  <small class="post_small">Asking price:</small>
+  <h4>US$<%= @post.price %></h4>
+  <br>
+  <small class="post_small">Description:</small>
+  <p><%= @post.description %></p>
+  <br>
+  <small class="post_small">Category:</small>
+  <p><%= @post.category %></p>
 
-<%= image_tag(@post.image.thumb.url) if @post.image? %>
+  <br>
+  <small class="post_small">Condition:</small>
+  <p><%= @post.category %></p>
 
-<% if policy(@post).edit? %>
-  <%= link_to "Edit", edit_post_path(@post), class: 'btn' %>
-<% end %>
+  <br>
+  <%= link_to "Take my money!", root_path, class: "btn" %>
 
-</br>
- 
-<% if policy(@comment).new? %>
-  <div class="row">
-   <h2>Comments</h2>
-   <div class='col-md-12'>
-     <%= render @comments %>
-     <%= render 'comments/form', topic: @topic, comment: @comment, post: @post %>
-   </div>
-  </div>
-<% end %>
+  <br><br>
+
+
+  <% if policy(@post).edit? %>
+    <%= link_to "Edit post", edit_post_path(@post) %> |
+  <% end %>
+
+  <% if policy(@post).destroy? %>
+    <%= link_to "Destroy post", method: :delete, class: 'btn btn-floating', data: { confirm: 'Are you sure you want to delete this post?' } %>
+  <% end %>
+
+
+  <br><br>
+   
+   <hr/>
+  <% if policy(@comment).new? %>
+       <%= render @comments %>
+       <%= render 'comments/form' %>
+  <% end %>
+</div>
+
+<div class="col s7 images-column">
+ <small class="post_small">Images:</small>
+<%= image_tag(@post.image.url) if @post.image? %>
+</div>
