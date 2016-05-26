@@ -28,13 +28,18 @@ $green-02: color("light-green", "accent-4");
 //= = = = = = = = = = = = = = = = = /
 
 html {
-  background: image-url('bg2.jpg') no-repeat right bottom fixed !important;
+  color: $green-01;
+  font-family: 'Source Code Pro';
+}
+
+body {
+  background: image-url('bg2.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
      background-size: cover;
-  color: $green-01;
-  font-family: 'Source Code Pro';
+     min-height: 100%;
+     height: auto;
 }
 
 h1, h2 {
@@ -305,9 +310,9 @@ form {
 
 .post-image {
   margin-top: 3px;
-  // img {
-  //   border-radius: 4px;    
-  // }
+  img {
+    border-radius: 4px;    
+  }
 }
 
 .product-title {

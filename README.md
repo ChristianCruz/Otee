@@ -25,7 +25,7 @@ Capstone project for the TTS 2016 part-time bootcamp.
 * fog
 * will_paginate
 
-Working example - [click here](shinobiri.herokuapp.com).
+Working example - [click here](https://shinobiri.herokuapp.com/).
 
 Powered by [RoR](http://rubyonrails.org/)
 
