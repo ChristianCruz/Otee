@@ -41,6 +41,9 @@ gem 'fog'
  # grab bindings from higher up the call stack and evaluate code in that context
  gem 'binding_of_caller'
 
+# jquery pluggin for turbolinks
+ gem  'jquery-turbolinks'
+
 
 ###############################################
 ##
