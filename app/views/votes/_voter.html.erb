@@ -1,0 +1,11 @@
+<% if policy(Vote.new).create? %>
+  <div class="right voting">
+      <%= link_to post_up_vote_path(post), method: :post do %>
+        <i class="material-icons">thumb_up</i>
+      <% end %>
+      <%= @post.points %>
+      <%= link_to post_down_vote_path(post), method: :post do %>
+        <i class="material-icons">thumb_down</i>
+      <% end %>
+  </div>
+<% end %>

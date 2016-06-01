@@ -1,12 +1,11 @@
 class PostsController < ApplicationController
   def index
-
     if params[:keyword]
       @posts = Post.searched(params[:keyword]).paginate(page: params[:page], per_page: 10)
     else
       @posts = Post.paginate(page: params[:page], per_page: 10)
     end
-    @category =  ["Prueba", "test", "Epreuve"]
+    @category =  ["auto parts", "bike parts", "computers", "electronics", "jewelry", "motorcycles", "sporting goods", "tools", "toys & games", "video games", "others"]
 
     authorize @posts
   end

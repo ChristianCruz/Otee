@@ -45,6 +45,8 @@ gem 'fog'
  gem  'jquery-turbolinks'
 
 
+
+
 ###############################################
 ##
 ## DEFAULT GEMS
@@ -87,5 +89,7 @@ group :development do
   gem 'sqlite3'
   gem "better_errors"
   gem 'spring'
+   # Rspec as a testing framework
+   gem 'rspec-rails', '~> 3.0'
 end
 

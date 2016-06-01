@@ -1,14 +1,16 @@
-<% if current_user %>
-  <h5><small>Use the form below to ask questions about this product:</small></h5>
+<div class="comments_form">
+  <% if current_user %>
+    <h5><small>Use the form below to ask questions about this product:</small></h5>
 
-  <%= form_for [@post, @post.comments.build] do |f| %>
-    <div class="field">
-      <%= f.label :body %>
-    </div>
-    
-    <div class="field">
-      <%= f.text_field :body %>
-    </div>
-    <%= f.submit "Post question", class:'btn' %>
-  <% end %>
-<% end %> 
+    <%= form_for [@post, @post.comments.build] do |f| %>
+      <div class="field">
+        <%= f.label :body %>
+      </div>
+      
+      <div class="field">
+        <%= f.text_field :body %>
+      </div>
+      <%= f.submit "Post question", class:'btn col s12' %>
+    <% end %>
+  <% end %> 
+</div>

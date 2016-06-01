@@ -28,6 +28,7 @@
                 <%= post.comments.count %> <% if post.comments.count < 2 %>Comment <% else %>Comments<% end %>
               </small>
             </div>
+            
             <div class="col s3">
               <div class="right post-image">
                 <%= image_tag(post.image.thumb, width: "90", height: "90", class: "") if post.image? %>

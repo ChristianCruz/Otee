@@ -41,13 +41,16 @@ categories = Category.all
 
  # Create Posts
  50.times do
-   Post.create!(
+   post = Post.create!(
      user: users.sample,
      category: categories.sample,
      product:  Faker::Lorem.sentence,
      description:   Faker::Lorem.paragraph,
      price: Faker::Commerce.price,
    )
+
+   post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+   post.update_rank
  end
  posts = Post.all
  

@@ -1,12 +1,13 @@
-<p>
-  <%= comment.body %>
-  <% if comment.user %>
-  <small>
-  <%= comment.user.username %> commented <%= time_ago_in_words(comment.created_at) %> ago
-     
-     <% if policy(comment).destroy? %>
-    
-     <% end %>
-  </small>
-  <% end %>
-</p>
+<div class="comments">
+  <p>
+    <%= comment.body %>
+    <br><br>
+    <% if comment.user %>
+      <small style="color: #999;">
+        <%= comment.user.username %> commented <%= time_ago_in_words(comment.created_at) %> ago   
+        <% if policy(comment).destroy? %>
+        <% end %>
+      </small>
+    <% end %>
+  </p>
+</div>

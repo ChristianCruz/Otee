@@ -280,6 +280,21 @@ form {
   // background-color: red;
 }
 
+// * - -  COMMENTS  - - * //
+//-----------------------//
+
+.comments {
+  background: #000;
+  padding: 10px 15px 5px 15px;
+  margin-bottom: 10px;
+}
+
+.comments_form {
+  height: auto;
+  margin-bottom: 33px !important;
+}
+
+
 // * - - BUTTONS - - * //
 //--------------------//
 
@@ -319,6 +334,15 @@ form {
   display: inline;
 }
 
+// * - -  voting  - - * //
+//---------------------//
 
+.voting {
+  margin-top: 10px;
+}
+
+.post_back_voter {
+  margin-bottom: 20px;
+}
 
 

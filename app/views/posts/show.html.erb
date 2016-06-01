@@ -1,7 +1,23 @@
-<div class="col s5 post">
-  <%= link_to posts_path, class: 'btn-back btn btn-floating' do %>
-     <i class="material-icons tooltipped" data-position="right" data-delay="50" data-tooltip="Back to list">arrow_back</i>
-  <% end %>
+<div class="col s12 m5 post">
+  <div class="col s12 post_back_voter">
+    <div class="col s6">
+      <%= link_to posts_path, class: 'btn-back btn btn-floating' do %>
+         <i class="material-icons tooltipped" data-position="right" data-delay="50" data-tooltip="Back to list">arrow_back</i>
+      <% end %>
+    </div>
+    <div class="col s6 ">
+      <%= render partial: 'votes/voter', locals: { post: @post }, class: "voting" %>
+    </div>
+  </div>
+  <hr>
+  <div style="color: #999">
+    <small><%= pluralize(@post.points, 'point') %> |</small>
+    <small>
+      <%= pluralize(@post.up_votes, 'up vote') %>,
+      <%= pluralize(@post.down_votes, 'down vote') %>
+    </small>
+  </div>
+
   <a class=""><i class="material-icons"></i></a><br><br>
   <small class="post_small">Product:</small>
   <h4><%= @post.product %></h4>
@@ -24,7 +40,6 @@
 
   <br><br>
 
-
   <% if policy(@post).edit? %>
     <%= link_to "Edit post", edit_post_path(@post) %> |
   <% end %>
@@ -33,13 +48,12 @@
     <%= link_to "Destroy post", @post,  method: :delete, data: { confirm: 'Are you sure you want to delete this post?' } %>
   <% end %>
 
-
   <br><br>
    
    <hr/>
   <% if policy(@comment).new? %>
-       <%= render @comments %>
-       <%= render 'comments/form' %>
+    <%= render 'comments/form' %><br><br>
+    <%= render @comments %>   
   <% end %>
 </div>
 
