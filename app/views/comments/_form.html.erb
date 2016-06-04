@@ -1,10 +1,10 @@
 <div class="comments_form">
   <% if current_user %>
-    <h5><small>Use the form below to ask questions about this product:</small></h5>
-
+    <h5><small>Use the form below to ask questions about this product.</small></h5>
+    <br>
     <%= form_for [@post, @post.comments.build] do |f| %>
       <div class="field">
-        <%= f.label :body %>
+        <%= f.label :body, 'Body:' %>
       </div>
       
       <div class="field">

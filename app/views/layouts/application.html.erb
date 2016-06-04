@@ -1,3 +1,34 @@
+
+<!--
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # #                                                                 # # #
+# # #   P R O J E C T   " S H I N O B I R I "                         # # #
+# # #   - - - - - - - - - - - - - - - - - - -                         # # #
+# # #                                                                 # # #
+# # #   Capstone project for the 2016 TTS Dallas part time cohort.    # # #
+# # #                                                                 # # #
+# # #   The idea is to create a "craigslist" type of market where     # # #
+# # #   the goal of the user is met in the most efficient way         # # #
+# # #   possible. Shinobiri is a free tool where the users sell       # # #
+# # #   goods and control their transactions.                         # # # 
+# # #                                                                 # # #
+# # #   Shinobiri is an open marketplace but we also have rules.      # # #
+# # #   A few simple rules used to protect the users and respect      # # #
+# # #   the laws. We encourage users and give them the options to     # # #
+# # #   enforce these rules. See the about page for more info.        # # #
+# # #                                                                 # # #
+# # #   Shinobiri is free to use and ment to be a portfolio piece.    # # # 
+# # #   The front-end and back-end work is a combination of           # # #
+# # #   the materialize framework and custom CSS for styling,         # # #
+# # #   JQUERY and AJAX for interaction and transitions,              # # # 
+# # #   Ruby on Rails as an umbrella for the project and database     # # #
+# # #   production & development. And the use of several gems that    # # #
+# # #   made the logic behind this idea possible.                     # # #
+# # #                                                                 # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+# # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
+-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,13 +48,22 @@
 
 </head>
 <body>
-<div class="navbar-fixed">
-        <nav class="z-depth-0 logo-nav transparent">
-          <div class="nav-wrapper">
-            <a href="/" class="brand-logo">Shinobiri</a>
-          </div>
-        </nav>
+  <div class="navbar-fixed">
+    <nav class="z-depth-0 logo-nav transparent">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Shinobiri</a>
+        <div class="right">
+          <% if current_user && current_user.role == 'admin' %>
+            <small>Hello, Master.</small>
+          <% elsif current_user %> 
+            <small>Hello, deshi.</small>
+          <% else %>
+            <small><em></em></small>
+          <% end %>
+        </div>
       </div>
+    </nav>
+  </div>
   <div class="container main-content">
     <div class="row">
       
@@ -51,13 +91,7 @@
 
     
   <nav class="z-depth-0 footer">
-    <% if current_user && current_user.role == 'admin' %>
-      Hello, Master.
-      <% elsif current_user %> 
-      Hello, deshi.
-    <% else %>
-      <small><em>Per populum, pro populo.</em></small>
-    <% end %>
+    <small><em>Per populum, pro populo.</em></small>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li>
         <%= nav_link_to(root_path, {}, { :selected_class => 'active' }) do %>
